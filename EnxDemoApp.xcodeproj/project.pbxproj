@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		113B145D6BB34E7D32350EB1 /* Pods_EnxDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C9B7AC3E0AAB236AA6D2C /* Pods_EnxDemoApp.framework */; };
+		BD32D04027757445006A4769 /* EnxDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32D03F27757445006A4769 /* EnxDemoAppApp.swift */; };
+		BD32D04227757445006A4769 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32D04127757445006A4769 /* ContentView.swift */; };
+		BD32D04427757446006A4769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD32D04327757446006A4769 /* Assets.xcassets */; };
+		BD32D04727757446006A4769 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD32D04627757446006A4769 /* Preview Assets.xcassets */; };
+		BD32D04E27757655006A4769 /* EnxConfrenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32D04D27757655006A4769 /* EnxConfrenceView.swift */; };
+		BD32D06A2775E8AF006A4769 /* EnxCreateRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32D0692775E8AF006A4769 /* EnxCreateRoomModel.swift */; };
+		BD32D06C2775EC06006A4769 /* EnxConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32D06B2775EC06006A4769 /* EnxConstant.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		49F786EEAC136FBA01C6E5FF /* Pods-EnxDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnxDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7AEEB00D0BE67BD2F8E40B51 /* Pods-EnxDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnxDemoApp.release.xcconfig"; path = "Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		8C0C9B7AC3E0AAB236AA6D2C /* Pods_EnxDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnxDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD32D03C27757445006A4769 /* EnxDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnxDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD32D03F27757445006A4769 /* EnxDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxDemoAppApp.swift; sourceTree = "<group>"; };
+		BD32D04127757445006A4769 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BD32D04327757446006A4769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD32D04627757446006A4769 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BD32D04D27757655006A4769 /* EnxConfrenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxConfrenceView.swift; sourceTree = "<group>"; };
+		BD32D0692775E8AF006A4769 /* EnxCreateRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxCreateRoomModel.swift; sourceTree = "<group>"; };
+		BD32D06B2775EC06006A4769 /* EnxConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxConstant.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD32D03927757445006A4769 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				113B145D6BB34E7D32350EB1 /* Pods_EnxDemoApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A0AA61AAA844F067A23DA78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C0C9B7AC3E0AAB236AA6D2C /* Pods_EnxDemoApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD32D03327757444006A4769 = {
+			isa = PBXGroup;
+			children = (
+				BD32D03E27757445006A4769 /* EnxDemoApp */,
+				BD32D03D27757445006A4769 /* Products */,
+				C37185C0CEC0450399EE9179 /* Pods */,
+				9A0AA61AAA844F067A23DA78 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BD32D03D27757445006A4769 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD32D03C27757445006A4769 /* EnxDemoApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD32D03E27757445006A4769 /* EnxDemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				BD32D03F27757445006A4769 /* EnxDemoAppApp.swift */,
+				BD32D04127757445006A4769 /* ContentView.swift */,
+				BD32D04D27757655006A4769 /* EnxConfrenceView.swift */,
+				BD32D04327757446006A4769 /* Assets.xcassets */,
+				BD32D04527757446006A4769 /* Preview Content */,
+				BD32D0692775E8AF006A4769 /* EnxCreateRoomModel.swift */,
+				BD32D06B2775EC06006A4769 /* EnxConstant.swift */,
+			);
+			path = EnxDemoApp;
+			sourceTree = "<group>";
+		};
+		BD32D04527757446006A4769 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BD32D04627757446006A4769 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C37185C0CEC0450399EE9179 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49F786EEAC136FBA01C6E5FF /* Pods-EnxDemoApp.debug.xcconfig */,
+				7AEEB00D0BE67BD2F8E40B51 /* Pods-EnxDemoApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD32D03B27757445006A4769 /* EnxDemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD32D04A27757446006A4769 /* Build configuration list for PBXNativeTarget "EnxDemoApp" */;
+			buildPhases = (
+				B6C3E078F52E6EEEA240D924 /* [CP] Check Pods Manifest.lock */,
+				BD32D03827757445006A4769 /* Sources */,
+				BD32D03927757445006A4769 /* Frameworks */,
+				BD32D03A27757445006A4769 /* Resources */,
+				2162E99656983ACEE84437C8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EnxDemoApp;
+			productName = EnxDemoApp;
+			productReference = BD32D03C27757445006A4769 /* EnxDemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD32D03427757444006A4769 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					BD32D03B27757445006A4769 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = BD32D03727757444006A4769 /* Build configuration list for PBXProject "EnxDemoApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD32D03327757444006A4769;
+			productRefGroup = BD32D03D27757445006A4769 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD32D03B27757445006A4769 /* EnxDemoApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD32D03A27757445006A4769 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD32D04727757446006A4769 /* Preview Assets.xcassets in Resources */,
+				BD32D04427757446006A4769 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2162E99656983ACEE84437C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6C3E078F52E6EEEA240D924 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnxDemoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD32D03827757445006A4769 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD32D06A2775E8AF006A4769 /* EnxCreateRoomModel.swift in Sources */,
+				BD32D04E27757655006A4769 /* EnxConfrenceView.swift in Sources */,
+				BD32D04227757445006A4769 /* ContentView.swift in Sources */,
+				BD32D04027757445006A4769 /* EnxDemoAppApp.swift in Sources */,
+				BD32D06C2775EC06006A4769 /* EnxConstant.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BD32D04827757446006A4769 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BD32D04927757446006A4769 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD32D04B27757446006A4769 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49F786EEAC136FBA01C6E5FF /* Pods-EnxDemoApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EnxDemoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = BH56368Y47;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) camera use";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "$(PRODUCT_NAME) microphone use";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enx.DemoApp.EnxDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD32D04C27757446006A4769 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AEEB00D0BE67BD2F8E40B51 /* Pods-EnxDemoApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EnxDemoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = BH56368Y47;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) camera use";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "$(PRODUCT_NAME) microphone use";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enx.DemoApp.EnxDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD32D03727757444006A4769 /* Build configuration list for PBXProject "EnxDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD32D04827757446006A4769 /* Debug */,
+				BD32D04927757446006A4769 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD32D04A27757446006A4769 /* Build configuration list for PBXNativeTarget "EnxDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD32D04B27757446006A4769 /* Debug */,
+				BD32D04C27757446006A4769 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD32D03427757444006A4769 /* Project object */;
+}
