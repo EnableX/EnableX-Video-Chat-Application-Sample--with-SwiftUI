@@ -35,6 +35,35 @@ typedef NS_ENUM(NSInteger, EnxOutBoundCallState) {
     Disconnected,
     Timeout
 };
+
+typedef NSString * EnxCustomDataScope;
+    #define EnxCustomDataScopeuser @"user"
+    #define EnxCustomDataScopeowner @"owner"
+    #define EnxCustomDataScoperoom @"room"
+    #define EnxCustomDataScopesession @"session"
+
+//typedef NS_ENUM(NSInteger, EnxCustomDataScope) {
+//    user,
+//    owner,
+//    room,
+//    session
+//};
+
+
+typedef enum EnxPubType {
+    Screen,
+    Canvas,
+} EnxPubType;
+extern NSString * _Nonnull const EnxPubType_toString[];
+typedef enum EnxPubMode {
+    All,
+    Authorize,
+    Moderators,
+} EnxPubMode;
+extern NSString * _Nonnull const EnxPubMode_toString[];
+
+
+
 ///-----------------------------------
 /// @name Protocols
 ///-----------------------------------
@@ -479,43 +508,49 @@ typedef NS_ENUM(NSInteger, EnxOutBoundCallState) {
 - (void)didHardunMuteReceived:(NSArray *_Nullable)Data;
 
 /**
- Fired when any modiatore in confrence will do mute to any participent/other modiatore in same room
-@param Data has detail informtion about room mute
- @Details This delegate method for all modiatore in room once any moderator will do mute to any participent/moderator in same room
+ Fired when any modiatore in confrence will do mute to any participent/other modiatore  audio in same room
+ @param Data has detail informtion about room mute
+ @Details This ack delegate method for the modiatore in room who did user hardmute audio
  */
 /**
- There would be listener for moderator when hardmute used by moderator. For this delegates are:
- 
+ There would be listener for owner of the event
  Moderator Delegates
  */
-- (void)didMutedSingleUser:(NSArray *_Nullable)Data;
+- (void)didAckHardMuteUserAudio:(NSArray *_Nullable)Data;
 
 /**
- Fired when any modiatore in confrence will do unmute to any participent/other modiatore in same room
-@param Data has detail informtion about room mute
- @Details :- This delegate method for all modiatore in room once any moderator will do unmute to any participent/moderator in same room
+ Fired when any modiatore in confrence will do unmute to any participent/other modiatore  audio in same room
+ @param Data has detail informtion about room mute
+ @Details This ack delegate method for the modiatore in room who did user hardunmute audio
  */
 /**
- There would be listener for moderator when hardmute used by moderator. For this delegates are:
- 
+ There would be listener for owner of the event
  Moderator Delegates
- 
  */
-- (void)didUnMutedSingleUser:(NSArray *_Nullable)Data;
+
+- (void)didAckHardunMuteUserAudio:(NSArray *_Nullable)Data;
 
 /**
- Fired when any modiatore in confrence will do mute to any participent/other modiatore in same room
+ Fired when any modiatore in confrence will do mute to any participent/other modiatore video in same room
 @param Data has detail informtion about room mute
- @Details  This delegate method for all participent in room once any moderator will do mute to any participent/moderator in same room
+ @Details :- This ack delegate method for the modiatore in room who did user hardmute video
  */
 /**
- There would be listener for paricipant when hardmute used by moderator. For this delegates are:
- Paricipant Delegates
- 
+ There would be listener for owner of the event
+ Moderator Delegates
  */
-- (void)didHardMutedSingleUser:(NSArray *_Nullable)Data;
+- (void)didAckHardMuteUserVideo:(NSArray *_Nullable)Data;
 /**
- Fired when any modiatore in confrence will do unmute to any participent/other modiatore in same room.
+ Fired when any modiatore in confrence will do unmute to any participent/other modiatore video in same room
+@param Data has detail informtion about room mute
+ @Details  This ack delegate method for the modiatore in room who did user hardunmute video
+ */
+/**
+ There would be listener for owner of the event
+ */
+- (void)didAckHardUnMuteUserVideo:(NSArray *_Nullable)Data;
+/**
+ Fired when any modiatore in confrence will do unmute to any participent/other video modiatore in same room.
 @param Data has detail informtion about room mute
  @Details This delegate method for all participent in room once any moderator will do unmute to any participent/moderator in same room
  */
@@ -578,13 +613,20 @@ typedef NS_ENUM(NSInteger, EnxOutBoundCallState) {
  A Participant get of active talker list
  @param room Instance of the room where event happen.
  @param Data will contain list of EnxStream.
- @param view will contain full view of active talker list
  @Details once any participent successfully completed subscription of all avaialble stream in same confrence will receive available active talker list.
  By default its will give list of EnxStream, if user want complete view of active talker in that case he/she will pass a parameter "activeviews" = @"view" in "roominfo" duringb join room.
  
  */
 //This delegate methods will return list of EnxStream
 -(void)room:(EnxRoom *_Nullable)room didActiveTalkerList:(NSArray *_Nullable)Data;
+
+/**
+ A Participant get of active talker list
+ @param room Instance of the room where event happen.
+ @param view will contain full view of active talker list
+ @Details once any participent successfully completed subscription of all avaialble stream in same confrence will receive available active talker list.
+ By default its will give list of EnxStream, if user want complete view of active talker in that case he/she will pass a parameter "activeviews" = @"view" in "roominfo" duringb join room.
+ */
 //This delegate methods will return collectionView of EnxStream
 -(void)room:(EnxRoom *_Nullable)room didActiveTalkerView:(UIView *_Nullable)view;
 
@@ -705,18 +747,18 @@ typedef NS_ENUM(NSInteger, EnxOutBoundCallState) {
 /**
  A Participant listens to this delegate to know about a Anotation started by a user.
  @param room Instance of the room where event happen.
- @param Data list of required information to display Annotation Stream
+ @param stream EnxStream of Annotation
  @details all participants (Except owner of start annotation) in same confrence will get this delegate method, whenever Annotation has started by any participent in same confrence.
  */
--(void)room:(EnxRoom *_Nullable)room didAnnotationStarted:(NSArray *_Nullable)Data;
+-(void)room:(EnxRoom *_Nullable)room didAnnotationStarted:(EnxStream *_Nullable)stream;
 /**
  A Participant listens to this delegate to know about that Annotation  has stopped by user.
  
  @param room Instance of the room where event happen.
- @param Data list of required information to remove Annotation Stream
+ @param stream EnxStream of Annotation
  @details all participants (Except owner of stop annotation) in same confrence will get this delegate method, whenever Annotation has stopped by any participent in same confrence.
  */
--(void)room:(EnxRoom *_Nullable)room didAnnotationStopped:(NSArray *_Nullable)Data;
+-(void)room:(EnxRoom *_Nullable)room didAnnotationStopped:(EnxStream *_Nullable)stream;
 
 //Annotation Start/Stop Delegate for Self User
 /**
@@ -931,6 +973,7 @@ didFileDownloadCancelled:(NSArray *_Nullable)data;
 - (void)room:(EnxRoom *_Nonnull)room
 didFileUploadCancelled:(NSArray *_Nullable)data;
 
+#pragma mark- Advance Option CallBacks
 /**
  Fired for ACK advance option
  @param room Instance of the room where event happen.
@@ -971,7 +1014,13 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
  @details This delegate called once user will set advance option and request to know about advance option update during call.
  */
 - (void)room:(EnxRoom *_Nullable)room didGetAdvanceOptions:(NSArray *_Nullable)data;
-
+/**
+ Fired for advance opt update of Privacy Mode
+ @param room Instance of the room where event happen.
+ @param data information of advanceoption update.
+ @details This delegate mothed notify to all the user, once Moderator will set privacy mode advance option l.
+ */
+- (void)room:(EnxRoom *_Nullable)room didPrivacyModeUpDated:(NSArray *_Nullable)data;
 /**
  Fired for confrence duration update
  @param room Instance of the room where event happen.
@@ -1030,7 +1079,10 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
  @details This delegate method will called, when any of user will initiate for botbond call and call state has changed.
  */
 - (void)room:(EnxRoom *_Nullable)room didDialStateEvents:(EnxOutBoundCallState)state;
-
+//Handle Json Response
+- (void)didDialStateEvents:(NSArray *_Nullable)data;
+//Cancel Outbond call
+- (void)room:(EnxRoom *_Nullable)room didOutBoundCallCancel:(NSArray *_Nullable)data;
 /**
  Fired when outbond call started
  @param room Instance of the room where event happen.
@@ -1112,7 +1164,28 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
  @param data information about streaming  event
  @details This delegate method will called, when any modiatore will started streaming in room.
  */
-- (void)room:(EnxRoom *_Nullable)room didStreamingNotification:(NSArray *_Nullable)data;
+- (void)room:(EnxRoom *_Nullable)room didStreamingStarted:(NSArray *_Nullable)data;
+/**
+ Fired when  streaning Stopped in room
+ @param room Instance of the room where event happen.
+ @param data information about streaming  event
+ @details This delegate method will called, when any modiatore will Stopped streaming in room.
+ */
+- (void)room:(EnxRoom *_Nullable)room didStreamingStopped:(NSArray *_Nullable)data;
+/**
+ Fired when  streaning failed in room
+ @param room Instance of the room where event happen.
+ @param data information about streaming  event
+ @details This delegate method will called, when any modiatore will failed streaming in room.
+ */
+- (void)room:(EnxRoom *_Nullable)room didStreamingFailed:(NSArray *_Nullable)data;
+/**
+ Fired when  streaning update in room
+ @param room Instance of the room where event happen.
+ @param data information about streaming  event
+ @details This delegate method will called, when any modiatore will update streaming in room.
+ */
+- (void)room:(EnxRoom *_Nullable)room didStreamingUpdated:(NSArray *_Nullable)data;
 
 #pragma mark - BreakOut Room Delegates
 
@@ -1429,20 +1502,117 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
  */
 -(void)room:(EnxRoom* _Nullable)room didACKStopLiveRecording:(NSArray *_Nullable)data;
 /**
- This is  notification  for live recording strat in room
+ This is  the event for Start live recording  in room
  @param room Instance of the room where event happen.
  @param data details of the live recording
- @details this notification will notify to all users available in room including the owner of the methos also, about live reecording started
+ @details this CAllback  to all users available in room including the owner of the methos also, about live reecording started
  */
--(void)room:(EnxRoom* _Nullable)room didLiveRecordingNotification:(NSArray *_Nullable)data;
+-(void)room:(EnxRoom* _Nullable)room didRoomLiveRecordingOn:(NSArray *_Nullable)data;
+/**
+ This is  the event for Stop live recording  in room
+ @param room Instance of the room where event happen.
+ @param data details of the live recording
+ @details this CAllback  to all users available in room including the owner of the methos also, about live reecording Stop
+ */
+-(void)room:(EnxRoom* _Nullable)room didRoomLiveRecordingOff:(NSArray *_Nullable)data;
+/**
+  This is  the event for failed to Start/Stop  live recording  in room
+  @param room Instance of the room where event happen.
+  @param data details of the live recording
+  @details this CAllback  to all users available in room including the owner of the methos also, about live reecording failed to Start/Stop
+  */
+-(void)room:(EnxRoom* _Nullable)room didRoomLiveRecordingFailed:(NSArray *_Nullable)data;
+/**
+ This is  the event for Update current status of live recording  in room
+ @param room Instance of the room where event happen.
+ @param data details of the live recording
+ @details this Callback  to all users available in room including the owner of the methos also, about live reecording update
+ */
+-(void)room:(EnxRoom* _Nullable)room didRoomLiveRecordingUpdated:(NSArray *_Nullable)data;
 
 /**
- This is  notification  for live recording strat in room
+ This is  notification  for layout update to the event owner
  @param room Instance of the room where event happen.
- @param data details of the live recording
- @details this notification will notify to all New user who join the session after live recording on
+ @param data status Acknowledgment for events
+ @details this acknowledgment  will notify to the owner of the event
  */
--(void)room:(EnxRoom* _Nullable)room didRoomliverecordOn:(NSArray *_Nullable)data;
+-(void)room:(EnxRoom* _Nullable)room didACKUpdateLayout:(NSArray *_Nullable)data;
+/**
+ This is  event callback for all user in room for layout update in room
+ @param room Instance of the room where event happen.
+ @param data details about new purposed layout
+ @details this is layout update for all users in room
+ */
+-(void)room:(EnxRoom* _Nullable)room didLayoutupdated:(NSArray *_Nullable)data;
+/**
+ This is  event callback for all user in room for typing inidicator
+ @param isTryping true/false
+ @details this is indicate that user start typing **/
+-(void)didUserStartTyping:(BOOL)isTryping;
+
+#pragma mark - Customer Data Update
+/**
+ This is  event callback for the owner of the event
+ @param data update about save custom data
+ @details update about save custom data to the event owner **/
+-(void)didCustomDataSaved:(NSArray *_Nullable)data;
+/**
+ This is  event callback for the owner of the event
+ @param data update about Updated custom data
+ @details update about Updated custom data to the event owner **/
+-(void)didCustomDataUpdated:(NSArray *_Nullable)data;
+/**
+ This is  event callback for the owner of the event
+ @param data information about custome data
+ @details notify list of getdata **/
+-(void)didGetCustomData:(NSArray *_Nullable)data;
+-(void)didACKCustomDataUpdated:(NSArray *_Nullable)data;
+
+#pragma mark - Page Talker
+-(void)room:(EnxRoom* _Nullable)room didACKSubscribePageVideo:(NSArray *_Nullable)data;
+-(void)room:(EnxRoom* _Nullable)room didACKUnsubscribePageVideo:(NSArray *_Nullable)data;
+-(void)room:(EnxRoom* _Nullable)room didACKGetPageVideo:(NSArray *_Nullable)data;
+-(void)room:(EnxRoom* _Nullable)room didPageTalkerList:(NSArray *_Nullable)data;
+
+#pragma mark - Speech to Text
+
+- (void)room:(EnxRoom* _Nullable)room didACKStartLiveTranscription:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didACKStopLiveTranscription:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didACKSubscribeForLiveTranscription:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didTranscriptionEvents:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didRoomTranscriptionOn:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didRoomTranscriptionOff:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didSelfTranscriptionOn:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didSelfTranscriptionOff:(NSArray *_Nonnull)data;
+
+
+#pragma mark - HLS Stream
+- (void)room:(EnxRoom* _Nullable)room didHlsStarted:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didHlsStopped:(NSArray *_Nonnull)data;
+//In Feature if need
+- (void)room:(EnxRoom* _Nullable)room didHlsFailed:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didHlsWaiting:(NSArray *_Nonnull)data;
+
+#pragma mark- Speaker Volume
+-(void)didSpeakerMuted;
+-(void)didSpeakerUnmuted;
+#pragma mark - Share premission
+- (void)room:(EnxRoom* _Nullable)room didSharePermissionsModeChanged:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didACKSetSharePermissionMode:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didACKGrantSharePermission:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didACKDenySharePermission:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didACKReleaseSharePermission:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didACKRequestSharePermission:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didACKCancelSharePermission:(NSArray *_Nonnull)data;
+
+//Share Events
+- (void)room:(EnxRoom* _Nullable)room didSharePermissionRequested:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didSharePermissionReleased:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didSharePermissionDeny:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didSharePermissionCancled:(NSArray *_Nonnull)data;
+- (void)room:(EnxRoom* _Nullable)room didSharePermissionGranted:(NSArray *_Nonnull)data;
+
+
 
 @end
 @protocol EnxRoomFaceXDelegate <NSObject>
@@ -1500,6 +1670,14 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
  @details This delegate method will called when user will start screen and failed
  */
 -(void)failedToConnectWithBroadCast:(NSArray*_Nonnull)reason;
+
+/**
+ Fired when a broadcased disconnected failed
+ @param reason Information about failure to start screen share
+ @details This delegate method will called when user will start screen and failed
+ */
+-(void)failedToDisconnectWithBroadCast:(NSArray*_Nonnull)reason;
+
 /**
  Fired when disconnectedByOwner
  @details This delegate method will called when user will start screen shared and main room disconnected.
@@ -1627,6 +1805,9 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
 //store delegate refrence of parents room.
 @property(nonatomic) id _Nullable delegateRef;
 @property(nonatomic)BOOL isLobby;
+//Custome Data locally Storage
+@property(nonatomic,readonly)NSMutableDictionary * _Nullable customRoomData;
+
 ///-----------------------------------
 /// @name Public Methods
 ///-----------------------------------
@@ -1820,26 +2001,34 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
  mute single audio stream.
  Note: Hardmute functionality is only applicable to moderator.
  @param clientId is the participant who is being mute to the floor.
- @see EnxRoomDelegate:didMutedSingleUser:::data:
+ @see EnxRoomDelegate:didAckHardMuteUserAudio:::data:
  
  */
-
-- (void)muteSingleUser:(NSString*_Nonnull)clientId;
-
+- (void)hardMuteUserAudio:(NSString*_Nonnull)clientId;
 /**
  unmute single audio stream.
- 
  Note: Hardmute functionality is only applicable to moderator.
- 
  @param clientId is the participant who is being mute to the floor.
- 
- @see EnxRoomDelegate:didUnMutedSingleUser:::data:
- 
+ @see EnxRoomDelegate:didAckHardunMuteUserAudio:::data:
  */
-
-- (void)unMuteSingleUser:(NSString*_Nonnull)clientId;
-
+- (void)hardUnmuteUserAudio:(NSString*_Nonnull)clientId;
 /**
+ mute single user video .
+  Note: Hardmute functionality is only applicable to moderator.
+  @param clientId is the participant who is being mute to the floor.
+  @see EnxRoomDelegate:didAckHardMuteUserVideo:::data:
+  
+  */
+ - (void)hardMuteUserVideo:(NSString*_Nonnull)clientId;
+ /**
+  unmute single user video stream.
+  
+  Note: Hardunmute functionality is only applicable to moderator.
+  @param clientId is the participant who is being mute to the floor.
+  @see EnxRoomDelegate:didAckHardUnMuteUserVideo:::data:
+  */
+ - (void)hardUnmuteUserVideo:(NSString*_Nonnull)clientId;
+ /**
  
  A Stream carries different type of media . Audio, Video and/or Data. This stream gets transferred towards remote end points through EnableX Media Servers where it’s played and interacted with.
  
@@ -1993,7 +2182,7 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
  @param clientIds here will maintain list of client id who going to receive chat message. it can be nil if broadcast true.
  */
 -(void)sendUserData:(NSDictionary *_Nonnull)message isBroadCast:(BOOL)broadcast recipientIDs:(NSArray *_Nullable)clientIds;
-
+#pragma mark- Advance Option Method
 /**
  Client endpoint can set options at room level. to set adavance option after join room
 @param data contain list of advance option going to subscribe, data can't be nill
@@ -2046,13 +2235,32 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
  */
 -(void)cancelAllDownloads;
 #pragma mark- outbound call
- /**
-  Client endpoint can use this method to connect through outbond call,
-  @param number it is a NSString value which contain end user mobile number, its is a required property which can't be nil.
-  @param callerId this is a NSString which carry callerID,  its is a required property which can't be nil.
-    This method for initiating outbound call
- */
+/**
+ Old APIs for Client endpoint can use this method to connect through outbond call,
+ @param number it is a NSString value which contain end user mobile number, its is a required property which can't be nil.
+ @param callerId this is a NSString which carry callerID,  its is a required property which can't be nil.
+   This method for initiating outbound call
+*/
 -(void)makeOutboundCall:(NSString*_Nonnull)number callerId:(NSString *_Nonnull)callerId;
+/**
+ New APIs for Client endpoint can use this method to connect through outbond call, here in this apis user can pass their aditional dailer information
+ @param number it is a NSString value which contain end user mobile number, its is a required property which can't be nil.
+ @param callerId this is a NSString which carry callerID,  its is a required property which can't be nil.
+   This method for initiating outbound call
+ @param dialOptions - this is an optional argment for user needs
+*/
+-(void)makeOutboundCall:(NSString*_Nonnull)number callerId:(NSString *_Nonnull)callerId withDialOptions:(NSDictionary* _Nonnull)dialOptions;
+/**
+ New APIs for Client endpoint can use this method to connect through outbond call, here in this apis user can pass their aditional dailer information
+ @param numberList it is a NSArray value which contain end users mobile number, its is a required property which can't be nil.
+ @param callerId this is a NSString which carry callerID,  its is a required property which can't be nil.
+   This method for initiating outbound call
+ @param dialOptions - this is an optional argment for user needs
+*/
+-(void)makeOutboundCalls:(NSArray*_Nonnull)numberList callerId:(NSString *_Nonnull)callerId withDialOptions:(NSDictionary* _Nonnull)dialOptions;
+
+//Cancel out bond call for the any number
+-(void)cancelOutboundCall:(NSString*_Nonnull)number;
 
 #pragma mark- zoonin/zoomout on remote stream
 /**
@@ -2130,6 +2338,7 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
  Client endpoint can use this method to adjust Layout of activetalker View, This method will valid only if user has requested for complete view of activetalker
 */
 -(void)adjustLayout;
+
 
 #pragma mark- start/stop steaming
 /**
@@ -2329,10 +2538,65 @@ didFileUploadCancelled:(NSArray *_Nullable)data;
 
 #pragma mark - LiveRecording
 -(void)startLiveRecording:(NSDictionary *_Nonnull)streamingConfig;
--(void)stopLiveRecording:(NSDictionary *_Nonnull)streamingConfig;
+-(void)stopLiveRecording;
 
 #pragma mark - Switch AT View
 -(void)switchATView:(NSString * _Nonnull)viewString;
+-(void)forceUpdateATList;
+-(EnxPlayerView *_Nullable)getPlayer:(NSString*_Nonnull)clientID;
+-(void)highlightBorderForClient:(NSArray*_Nonnull)clientIDs;
+-(void)changeBgColorForClients:(NSArray*_Nonnull)clientIDs withColor:(UIColor *_Nonnull)color;
+#pragma mark - LoyouUpdate
+//Update Loyout for liveRecording’, ‘streaming’, ‘screenShare’,’all’
+-(void)updateLayout:(NSDictionary* _Nonnull)layoutOptions;
+
+#pragma mark - Typing indicator
+//Show and hide typing indicator
+-(void)typingIndicator:(BOOL)isShow toClientId:(NSArray* _Nullable)clientIds;
+
+#pragma mark - Customer Data Update
+//Save Data
+-(void)saveCustomData:(NSDictionary* _Nonnull)dataOption withData:(NSDictionary* _Nonnull)data;
+//set Custome Data
+-(void)setCustomData:(NSDictionary*_Nonnull)dataOption withData:(NSDictionary* _Nonnull)data;
+//get Data
+-(void)getCustomData:(NSDictionary* _Nonnull)dataOption;
+
+#pragma mark - Page Talker
+//Subscripe Page Talker
+-(void)subscribePagedVideos:(NSDictionary* _Nonnull)info;
+//Unsubscripe Page Talker
+-(void)unsubscribePagedVideos;
+//get Page Talker
+-(void)getPagedVideos:(NSString* _Nonnull)pageInfo;
+
+#pragma mark - Speech to Text
+-(void)subscribeForLiveTranscription:(BOOL)enable;
+-(void)startLiveTranscriptionForRoom:(NSString* _Nullable)languge;
+-(void)stopLiveTranscription;
+
+// Checking Video subscription
+-(BOOL)checkvideoSubscription;
+
+-(EnxStream* _Nullable)getPreviewStream;
+//Speaker Volume
+-(void)setSpeakerVolume:(float)volume;
+
+#pragma mark - Share premission
+//Participant Request
+-(void)requestSharePermission:(EnxPubType)pubType;
+-(void)cancelSharePermission:(EnxPubType)pubType;
+
+//Moderator Request
+-(void)setSharePermissionMode:(EnxPubType)pubType withmode:(EnxPubMode)pubMode;
+-(void)grantSharePermission:(EnxPubType)pubType requestyId:(NSString * _Nonnull)clientID;
+-(void)denySharePermission:(EnxPubType)pubType requestyId:(NSString * _Nonnull)clientID;
+-(void)releaseSharePermission:(EnxPubType)pubType requestyId:(NSString * _Nonnull)clientID;
+
+//Generice Apis for app Participants, who wanted to know what is the current premission available
+-(NSDictionary * _Nonnull)getSharePermissions;
+
+-(NSString*)getRoomMode;
 
 @end
 

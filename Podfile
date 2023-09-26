@@ -5,13 +5,22 @@ target 'EnxDemoApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-	
-        pod 'EnxRTCiOS'
-        pod 'Socket.IO-Client-Swift', '~> 15.0.0'
+        pod 'EnxRTCiOS', '2.3.14'
+        pod 'Socket.IO-Client-Swift', '~> 15.2.0'
         pod 'SVProgressHUD'
         pod 'ReachabilitySwift'
         pod 'AlertToast'
 
   # Pods for EnxDemoApp
+  
+  post_install do |installer|
+            installer.generated_projects.each do |project|
+                  project.targets.each do |target|
+                      target.build_configurations.each do |config|
+                          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+                       end
+                  end
+           end
+        end
 
 end

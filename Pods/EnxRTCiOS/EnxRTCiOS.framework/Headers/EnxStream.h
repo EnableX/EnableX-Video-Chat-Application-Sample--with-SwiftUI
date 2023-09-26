@@ -172,7 +172,6 @@ Delegate to give data for facial expressions
 - (void)stream:(EnxStream *_Nullable)stream didFaceWishData:(NSString *_Nullable)type value:(NSString *_Nullable)value;
 
 @end
-
 /**
  @interface EnxStream
  
@@ -303,7 +302,8 @@ from host device with defaultVideoConstraints.
 /**
  Generates the audio tracks for the stream
  */
-- (void)generateAudioTracks;
+//- (void)generateAudioTracks;
+//-(void)removeAudioTracks;
 
 /**
  Get attributes of the stream
@@ -477,6 +477,7 @@ from host device with defaultVideoConstraints.
 @property (nonatomic) BOOL isAudioOnlyStream;
 @property(nonatomic,readonly)BOOL isCaptchaStared;
 @property(nonatomic,strong)NSString *_Nullable layout;
+@property(nonatomic,strong)NSString *_Nullable streamLayout;
 
 @property (readonly) BOOL usingFrontCamera;
 /*
@@ -495,6 +496,10 @@ from host device with defaultVideoConstraints.
  This method used to start capture if not stated
  */
 -(void)startCapture;
+/*
+ This method used to start capture to test preview of video
+ */
+-(void)startPreviewCapture;
 /*
  This method used to set resolution for stream
  */

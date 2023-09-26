@@ -18,11 +18,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) id playerDelegate;
 @property(weak,nonatomic) id<EnxTalkerStreamDelegate> delegate;
 
+
 -(id)initWithFrame:(CGRect)frame;
 -(void)updateView:(NSArray* _Nonnull)array;
 -(void)preapareATView:(NSArray * _Nonnull)list;
 -(void)updateLoayout;
 -(void)switchATView:(BOOL)isList;
+-(void)forceUpdate;
+-(EnxStream*)getStream:(NSString* _Nonnull)clientID;
+-(void)highlightBorderColorForClient:(NSArray*_Nonnull)clientIDs;
+-(void)chnageBGColorForClient:(NSArray*_Nonnull)clientIDs withColor:(UIColor* _Nonnull)color;
 
 
 @end

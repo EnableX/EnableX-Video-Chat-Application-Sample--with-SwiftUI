@@ -458,5 +458,15 @@
     "event_code": "4045",
     "severity": "high",
     "event_name": "make-outbond-call-state"
+  },
+  "event_page_talker": {
+    "event_code": "4046",
+    "severity": "high",
+    "event_name": "page_talker"
+  },
+    "event_Live_recording": {
+    "event_code": "4047",
+    "severity": "high",
+    "event_name": "live_recording"
   }
 }

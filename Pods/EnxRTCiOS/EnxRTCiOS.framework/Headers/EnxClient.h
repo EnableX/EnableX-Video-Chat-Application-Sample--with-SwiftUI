@@ -48,6 +48,8 @@ extern NSString* clientStateToString(EnxClientState state);
 @property (nonatomic,readonly) int maxNumberOfLayers;
 @property (nonatomic,readonly) int maxbandWidth;
 @property (nonatomic,strong) NSString *peerId;
+@property (nonatomic,strong) NSString *subscriberLayout;
+@property (nonatomic,strong) NSMutableArray *iceArray;
 ///-----------------------------------
 /// @name Initializers
 ///-----------------------------------
@@ -56,10 +58,10 @@ extern NSString* clientStateToString(EnxClientState state);
 
 //- (instancetype)initWithDelegate:(id<EnxClientDelegate>)delegate;
 // for Publisger Stream
-- (instancetype)initPublishClientWithDelegate:(id<EnxClientDelegate>)delegate withEnxRoom:(EnxRoom *)room withMaxVideoLayers:(int)layer withMaxBandWidth:(int)bandWidth isAudioOnly:(BOOL)isAudioOnly ;
+- (instancetype)initPublishClientWithDelegate:(id<EnxClientDelegate>)delegate withEnxRoom:(EnxRoom *)room withMaxVideoLayers:(int)layer withMaxBandWidth:(int)bandWidth;
 
 // for Subscriber Stream
--(instancetype)initSubscriberClientWithDelegate:(id<EnxClientDelegate>)delegate withEnxRoom:(EnxRoom *)room;
+-(instancetype)initSubscriberClientWithDelegate:(id<EnxClientDelegate>)delegate withEnxRoom:(EnxRoom *)room withLayout:(NSString*)layout;
 
 // for CanVas Stream
 -(instancetype)initCanvasClientWithDelegate:(id<EnxClientDelegate>)delegate withEnxRoom:(EnxRoom *)room;
@@ -80,6 +82,6 @@ extern NSString* clientStateToString(EnxClientState state);
 + (void)setPreferredVideoCodec:(NSString *)codec;
 + (NSString *)getPreferredVideoCodec;
 + (void)hackSDPWithBlock:(SDPHackCallback)callback;
--(void)resetSDPonClient:(NSString *)mediaConfigurationCodec bandWidth:(NSString *)bandWidth;
+-(void)resetSDPonClient:(NSString *)mediaConfigurationCodec bandWidth:(NSInteger)bandWidth;
 -(void)setClientBitrate;
 @end
