@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		113B145D6BB34E7D32350EB1 /* Pods_EnxDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C9B7AC3E0AAB236AA6D2C /* Pods_EnxDemoApp.framework */; };
+		A53E5C7DFA1194DC148B91A3 /* Pods_EnxDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF8A71EA7ABE3104B106A4E /* Pods_EnxDemoApp.framework */; };
 		BD32D04027757445006A4769 /* EnxDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32D03F27757445006A4769 /* EnxDemoAppApp.swift */; };
 		BD32D04227757445006A4769 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32D04127757445006A4769 /* ContentView.swift */; };
 		BD32D04427757446006A4769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD32D04327757446006A4769 /* Assets.xcassets */; };
@@ -18,9 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49F786EEAC136FBA01C6E5FF /* Pods-EnxDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnxDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		7AEEB00D0BE67BD2F8E40B51 /* Pods-EnxDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnxDemoApp.release.xcconfig"; path = "Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp.release.xcconfig"; sourceTree = "<group>"; };
-		8C0C9B7AC3E0AAB236AA6D2C /* Pods_EnxDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnxDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CF8A71EA7ABE3104B106A4E /* Pods_EnxDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnxDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55BE58D60C442F8E77DEC705 /* Pods-EnxDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnxDemoApp.release.xcconfig"; path = "Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		B479B39629E5C9A6D19F6A8A /* Pods-EnxDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnxDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BD32D03C27757445006A4769 /* EnxDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnxDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD32D03F27757445006A4769 /* EnxDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxDemoAppApp.swift; sourceTree = "<group>"; };
 		BD32D04127757445006A4769 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,17 +36,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				113B145D6BB34E7D32350EB1 /* Pods_EnxDemoApp.framework in Frameworks */,
+				A53E5C7DFA1194DC148B91A3 /* Pods_EnxDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A0AA61AAA844F067A23DA78 /* Frameworks */ = {
+		06BA037F1038F8818FFCA914 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8C0C9B7AC3E0AAB236AA6D2C /* Pods_EnxDemoApp.framework */,
+				4CF8A71EA7ABE3104B106A4E /* Pods_EnxDemoApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -57,7 +57,7 @@
 				BD32D03E27757445006A4769 /* EnxDemoApp */,
 				BD32D03D27757445006A4769 /* Products */,
 				C37185C0CEC0450399EE9179 /* Pods */,
-				9A0AA61AAA844F067A23DA78 /* Frameworks */,
+				06BA037F1038F8818FFCA914 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +94,8 @@
 		C37185C0CEC0450399EE9179 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				49F786EEAC136FBA01C6E5FF /* Pods-EnxDemoApp.debug.xcconfig */,
-				7AEEB00D0BE67BD2F8E40B51 /* Pods-EnxDemoApp.release.xcconfig */,
+				B479B39629E5C9A6D19F6A8A /* Pods-EnxDemoApp.debug.xcconfig */,
+				55BE58D60C442F8E77DEC705 /* Pods-EnxDemoApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -107,11 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD32D04A27757446006A4769 /* Build configuration list for PBXNativeTarget "EnxDemoApp" */;
 			buildPhases = (
-				B6C3E078F52E6EEEA240D924 /* [CP] Check Pods Manifest.lock */,
+				3781E7E4D98BEA466806570E /* [CP] Check Pods Manifest.lock */,
 				BD32D03827757445006A4769 /* Sources */,
 				BD32D03927757445006A4769 /* Frameworks */,
 				BD32D03A27757445006A4769 /* Resources */,
-				2162E99656983ACEE84437C8 /* [CP] Embed Pods Frameworks */,
+				A6583E8E10E8B204478DC1B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,24 +168,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2162E99656983ACEE84437C8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B6C3E078F52E6EEEA240D924 /* [CP] Check Pods Manifest.lock */ = {
+		3781E7E4D98BEA466806570E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -205,6 +188,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6583E8E10E8B204478DC1B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -343,7 +343,7 @@
 		};
 		BD32D04B27757446006A4769 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49F786EEAC136FBA01C6E5FF /* Pods-EnxDemoApp.debug.xcconfig */;
+			baseConfigurationReference = B479B39629E5C9A6D19F6A8A /* Pods-EnxDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -378,7 +378,7 @@
 		};
 		BD32D04C27757446006A4769 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AEEB00D0BE67BD2F8E40B51 /* Pods-EnxDemoApp.release.xcconfig */;
+			baseConfigurationReference = 55BE58D60C442F8E77DEC705 /* Pods-EnxDemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

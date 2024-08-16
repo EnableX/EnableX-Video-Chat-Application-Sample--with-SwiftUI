@@ -5,8 +5,8 @@ target 'EnxDemoApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-        pod 'EnxRTCiOS', '2.3.14'
-        pod 'Socket.IO-Client-Swift', '~> 15.2.0'
+        pod 'EnxRTCiOS'
+        pod 'Socket.IO-Client-Swift', '~> 16.1.0'
         pod 'SVProgressHUD'
         pod 'ReachabilitySwift'
         pod 'AlertToast'

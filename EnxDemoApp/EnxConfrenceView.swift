@@ -48,7 +48,7 @@ extension Notification.Name {
 }
 class BridgingClass: UIViewController, EnxStreamDelegate, EnxRoomDelegate {
     func switchCamera() {
-        localStream.switchCamera()
+        _ = localStream.switchCamera()
     }
     func selfMuteAudio(_ flag: Bool) {
         localStream.muteSelfAudio(flag)
@@ -70,20 +70,20 @@ class BridgingClass: UIViewController, EnxStreamDelegate, EnxRoomDelegate {
     private var remoteRoom : EnxRoom!
     private var localStream : EnxStream!
     func joinRoom(_ token : String, _ username : String){
-        let localStreamInfo : NSDictionary = ["video" : true ,"audio" : true ,"data" :true ,"name" :username,"type" : "public","audio_only": false]
+        let localStreamInfo : [String : Any] = ["video" : true ,"audio" : true ,"data" :true ,"name" :username,"type" : "public","audio_only": false]
         
-        let playerConfiguration : NSDictionary = ["avatar":true,"audiomute":true, "videomute":true,"bandwidht":true, "screenshot":true,"iconColor" :"#0000FF"]
+        let playerConfiguration : [String : Any] = ["avatar":true,"audiomute":true, "videomute":true,"bandwidht":true, "screenshot":true,"iconColor" :"#0000FF"]
         
-       let roomInfo : NSDictionary  = ["allow_reconnect" : true , "number_of_attempts" : 3, "timeout_interval" : 20,"playerConfiguration":playerConfiguration,"activeviews" : "view"]
+        let roomInfo : [String : Any]  = ["allow_reconnect" : true , "number_of_attempts" : 3, "timeout_interval" : 20,"playerConfiguration":playerConfiguration,"activeviews" : "view"]
         
-        guard let steam = enxRTC.joinRoom(token, delegate: self, publishStreamInfo: (localStreamInfo as! [AnyHashable : Any]), roomInfo: (roomInfo as! [AnyHashable : Any]), advanceOptions: nil) else{
+        guard let steam = enxRTC.joinRoom(token, delegate: self, publishStreamInfo: localStreamInfo , roomInfo: roomInfo , advanceOptions: nil) else{
             return
         }
         self.localStream = steam
         self.localStream.delegate = self as EnxStreamDelegate
     }
     func createLocalView() -> EnxPlayerView{
-        let enxplayerView = EnxPlayerView.init(localView: CGRect.init(x: 10, y: 20, width: 100, height: 120))
+        let enxplayerView = EnxPlayerView(withLocalView: CGRect.init(x: 10, y: 20, width: 100, height: 120))
         self.view.addSubview(enxplayerView)
         self.view.bringSubviewToFront(enxplayerView)
         return enxplayerView;
@@ -93,7 +93,7 @@ class BridgingClass: UIViewController, EnxStreamDelegate, EnxRoomDelegate {
     /*
      This Delegate will notify to User Once he got succes full join Room
      */
-    func room(_ room: EnxRoom?, didConnect roomMetadata: [AnyHashable : Any]?){
+    func room(_ room: EnxRoom?, didConnect roomMetadata: [String : Any]?){
         remoteRoom = room
         remoteRoom.publish(localStream)
         localStream.attachRenderer(createLocalView())
@@ -119,7 +119,7 @@ class BridgingClass: UIViewController, EnxStreamDelegate, EnxRoomDelegate {
      This Delegate will notify to User if any new person added to room
      */
     func room(_ room: EnxRoom?, didAddedStream stream: EnxStream?) {
-        room!.subscribe(stream!)
+       _ =  room!.subscribe(stream!)
     }
     /*
      This Delegate will notify to User to subscribe other user stream
@@ -150,7 +150,7 @@ class BridgingClass: UIViewController, EnxStreamDelegate, EnxRoomDelegate {
     /*
      This Delegate will notify to end User if Room connecton status changed
      */
-    func room(_ room: EnxRoom?, didChange status: EnxRoomStatus) {
+    func room(_ room: EnxRoom?, didChangeStatus status: EnxRoomStatus) {
         //To Do
     }
     func room(_ room: EnxRoom?, didActiveTalkerView view: UIView?) {
@@ -174,16 +174,16 @@ class BridgingClass: UIViewController, EnxStreamDelegate, EnxRoomDelegate {
     /*
      This Delegate will notify to current User If any user has stoped There Video or current user Video
      */
-    func didVideoEvents(_ data: [AnyHashable : Any]?) {
+    func didVideoEvents(_ responseData : [String : Any]?) {
         //To Do
         NotificationCenter.default.post(Notification(name: .video,
                                                            object: nil,
-                                                           userInfo: data))
+                                                           userInfo: responseData))
     }
     /*
      This Delegate will notify to current User If any user has stoped There Audio or current user Video
      */
-    func didAudioEvents(_ data: [AnyHashable : Any]?) {
+    func didAudioEvents(_ data: [String : Any]?) {
         NotificationCenter.default.post(Notification(name: .audio,
                                                            object: nil,
                                                            userInfo: data))
