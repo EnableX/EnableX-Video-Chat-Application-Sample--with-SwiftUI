@@ -48,18 +48,33 @@ extension Notification.Name {
 }
 class BridgingClass: UIViewController, EnxStreamDelegate, EnxRoomDelegate {
     func switchCamera() {
+        guard localStream != nil else {
+            return
+        }
         _ = localStream.switchCamera()
     }
     func selfMuteAudio(_ flag: Bool) {
+        guard localStream != nil else {
+            return
+        }
         localStream.muteSelfAudio(flag)
     }
     func selfMuteVideo(_ flag: Bool) {
+        guard localStream != nil else {
+            return
+        }
         localStream.muteSelfVideo(flag)
     }
     func disconnect() {
+        guard remoteRoom != nil else {
+            return
+        }
         remoteRoom.disconnect()
     }
     func changeToSpeaker(_ flag: Bool) {
+        guard remoteRoom != nil else {
+            return
+        }
         if(flag){
             remoteRoom.switchMediaDevice("Speaker")
         }else{
@@ -113,6 +128,9 @@ class BridgingClass: UIViewController, EnxStreamDelegate, EnxRoomDelegate {
      */
     func room(_ room: EnxRoom?, didPublishStream stream: EnxStream?) {
         //To Do
+        guard remoteRoom != nil else {
+            return
+        }
         remoteRoom.switchMediaDevice("Speaker")
     }
     /*

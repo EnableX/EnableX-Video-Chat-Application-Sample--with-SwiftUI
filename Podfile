@@ -6,7 +6,7 @@ target 'EnxDemoApp' do
   use_frameworks!
 
         pod 'EnxRTCiOS'
-        pod 'Socket.IO-Client-Swift', '~> 16.1.0'
+        pod 'Socket.IO-Client-Swift', '~> 16.1.1'
         pod 'SVProgressHUD'
         pod 'ReachabilitySwift'
         pod 'AlertToast'
