@@ -23,7 +23,7 @@ You will also enjoy the following features:
 
 You would need API credentials to access EnableX platform. To do that, simply create an account with us. It’s absolutely free!
 
-* Create an account with EnableX - https://portal.enablex.io/cpaas/trial-sign-up/
+* Create an account with EnableX - https://www.enablex.io/free-trial/
 * Create your Project
 * Get your App ID and App Key delivered to your email
 
@@ -97,7 +97,7 @@ In this environment, you will only be able to:
 * Conduct a single session with a total durations of not more than 10 minutes.
 * Host a multiparty call with not more than 3 participants 
 
-> More information on Testing Environment: https://developer.enablex.io/video/sample-code/#demo-app-server
+> More information on Testing Environment: https://developer.enablex.io/docs/guides/video-guide/sample-codes/video-calling-app/#demo-application-server
 
 Once you have tested it, it is important that you set up your own Application Server to continue building a multiparty iOS video calling app. Refer to section 1.1.4 on how to set up the application server. 
   
