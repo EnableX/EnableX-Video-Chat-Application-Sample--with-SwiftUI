@@ -14,9 +14,17 @@
 		BD32D04E27757655006A4769 /* EnxConfrenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32D04D27757655006A4769 /* EnxConfrenceView.swift */; };
 		BD32D06A2775E8AF006A4769 /* EnxCreateRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32D0692775E8AF006A4769 /* EnxCreateRoomModel.swift */; };
 		BD32D06C2775EC06006A4769 /* EnxConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32D06B2775EC06006A4769 /* EnxConstant.swift */; };
+		BDDB29792D12A7D8006ECA85 /* EnxViewModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB29782D12A7D1006ECA85 /* EnxViewModelClass.swift */; };
+		BDDB297B2D12AE3E006ECA85 /* EnxViewResponsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB297A2D12AE34006ECA85 /* EnxViewResponsible.swift */; };
+		BDDB297D2D12AF0C006ECA85 /* EnxContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB297C2D12AEFE006ECA85 /* EnxContentView.swift */; };
+		BDDB297F2D12B465006ECA85 /* EnxLocalViewResponsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB297E2D12B461006ECA85 /* EnxLocalViewResponsible.swift */; };
+		BDDB29812D12C2D0006ECA85 /* EnxActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB29802D12C2CA006ECA85 /* EnxActionView.swift */; };
+		F6DFF56706CF6729A8F1CA09 /* Pods_EnxDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F995BBB10EB4067355F0DAFA /* Pods_EnxDemoApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3496710BFF1F7F572F818673 /* Pods-EnxDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnxDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		56FB7C766D28EE51DBDE23A5 /* Pods-EnxDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnxDemoApp.release.xcconfig"; path = "Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		BD32D03C27757445006A4769 /* EnxDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnxDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD32D03F27757445006A4769 /* EnxDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxDemoAppApp.swift; sourceTree = "<group>"; };
 		BD32D04127757445006A4769 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -25,6 +33,12 @@
 		BD32D04D27757655006A4769 /* EnxConfrenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxConfrenceView.swift; sourceTree = "<group>"; };
 		BD32D0692775E8AF006A4769 /* EnxCreateRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxCreateRoomModel.swift; sourceTree = "<group>"; };
 		BD32D06B2775EC06006A4769 /* EnxConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxConstant.swift; sourceTree = "<group>"; };
+		BDDB29782D12A7D1006ECA85 /* EnxViewModelClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxViewModelClass.swift; sourceTree = "<group>"; };
+		BDDB297A2D12AE34006ECA85 /* EnxViewResponsible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxViewResponsible.swift; sourceTree = "<group>"; };
+		BDDB297C2D12AEFE006ECA85 /* EnxContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxContentView.swift; sourceTree = "<group>"; };
+		BDDB297E2D12B461006ECA85 /* EnxLocalViewResponsible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxLocalViewResponsible.swift; sourceTree = "<group>"; };
+		BDDB29802D12C2CA006ECA85 /* EnxActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnxActionView.swift; sourceTree = "<group>"; };
+		F995BBB10EB4067355F0DAFA /* Pods_EnxDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnxDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,18 +46,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6DFF56706CF6729A8F1CA09 /* Pods_EnxDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48E949DF8750FDBD52F53154 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F995BBB10EB4067355F0DAFA /* Pods_EnxDemoApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BD32D03327757444006A4769 = {
 			isa = PBXGroup;
 			children = (
 				BD32D03E27757445006A4769 /* EnxDemoApp */,
 				BD32D03D27757445006A4769 /* Products */,
 				C37185C0CEC0450399EE9179 /* Pods */,
+				48E949DF8750FDBD52F53154 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +82,11 @@
 		BD32D03E27757445006A4769 /* EnxDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				BDDB29802D12C2CA006ECA85 /* EnxActionView.swift */,
+				BDDB297E2D12B461006ECA85 /* EnxLocalViewResponsible.swift */,
+				BDDB297C2D12AEFE006ECA85 /* EnxContentView.swift */,
+				BDDB297A2D12AE34006ECA85 /* EnxViewResponsible.swift */,
+				BDDB29782D12A7D1006ECA85 /* EnxViewModelClass.swift */,
 				BD32D03F27757445006A4769 /* EnxDemoAppApp.swift */,
 				BD32D04127757445006A4769 /* ContentView.swift */,
 				BD32D04D27757655006A4769 /* EnxConfrenceView.swift */,
@@ -80,6 +109,8 @@
 		C37185C0CEC0450399EE9179 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				3496710BFF1F7F572F818673 /* Pods-EnxDemoApp.debug.xcconfig */,
+				56FB7C766D28EE51DBDE23A5 /* Pods-EnxDemoApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -91,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD32D04A27757446006A4769 /* Build configuration list for PBXNativeTarget "EnxDemoApp" */;
 			buildPhases = (
+				0844FA89A7F2CFD6C9F72366 /* [CP] Check Pods Manifest.lock */,
 				BD32D03827757445006A4769 /* Sources */,
 				BD32D03927757445006A4769 /* Frameworks */,
 				BD32D03A27757445006A4769 /* Resources */,
+				2BD8306F9E5F377CACB1730A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,11 +182,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0844FA89A7F2CFD6C9F72366 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnxDemoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BD8306F9E5F377CACB1730A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnxDemoApp/Pods-EnxDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BD32D03827757445006A4769 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDDB297B2D12AE3E006ECA85 /* EnxViewResponsible.swift in Sources */,
+				BDDB29792D12A7D8006ECA85 /* EnxViewModelClass.swift in Sources */,
+				BDDB297D2D12AF0C006ECA85 /* EnxContentView.swift in Sources */,
+				BDDB297F2D12B465006ECA85 /* EnxLocalViewResponsible.swift in Sources */,
+				BDDB29812D12C2D0006ECA85 /* EnxActionView.swift in Sources */,
 				BD32D06A2775E8AF006A4769 /* EnxCreateRoomModel.swift in Sources */,
 				BD32D04E27757655006A4769 /* EnxConfrenceView.swift in Sources */,
 				BD32D04227757445006A4769 /* ContentView.swift in Sources */,
@@ -283,6 +363,7 @@
 		};
 		BD32D04B27757446006A4769 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3496710BFF1F7F572F818673 /* Pods-EnxDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,6 +398,7 @@
 		};
 		BD32D04C27757446006A4769 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56FB7C766D28EE51DBDE23A5 /* Pods-EnxDemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -49,9 +49,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
                VStack (alignment: .center){
-                   NavigationLink(destination:EnxConfrenceView(token: token,userName: username)
+                   NavigationLink(destination:EnxContentView(token: token,userName: username)
                                     , isActive: $willMoveToNextScreen) {
                        EmptyView() }
+//                   NavigationLink(destination:EnxConfrenceView(token: token,userName: username)
+//                                    , isActive: $willMoveToNextScreen) {
+//                       EmptyView() }
                    Image("logoImage")
                    Text("Welcome!").font(.title).bold().padding(.bottom, 20)
                    TextField("Enter name", text: $username).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 40).padding(.trailing, 40)
